@@ -6,7 +6,11 @@ import java.util.Objects;
 
 public class Seller implements Serializable {
 
-	private int id;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private Integer id;
 	private String name;
 	private String email;
 	private Date birthDate;
@@ -18,8 +22,7 @@ public class Seller implements Serializable {
 		
 	}
 
-	public Seller(int id, String name, String email, Date birthDate, Double baseSalary, Department department) {
-		super();
+	public Seller(Integer id, String name, String email, Date birthDate, Double baseSalary, Department department) {
 		this.id = id;
 		this.name = name;
 		this.email = email;
@@ -90,9 +93,16 @@ public class Seller implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		Seller other = (Seller) obj;
-		return id == other.id;
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
+			return false;
+		return true;
 	}
-
+		
+		
+		
 	@Override
 	public String toString() {
 		return "Seller [id=" + id + ", name=" + name + ", email=" + email + ", birthDate=" + birthDate + ", baseSalary="
