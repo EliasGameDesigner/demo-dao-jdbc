@@ -5,14 +5,18 @@ import java.util.Objects;
 
 public class Department implements Serializable {
 
-	int id;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	Integer id;
 	String name;
 	
 	public Department() {
 		
 	}
 	
-	public Department(int id, String name) {
+	public Department(Integer id, String name) {
 		super();
 		this.id = id;
 		this.name = name;
